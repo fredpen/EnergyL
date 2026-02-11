@@ -36,7 +36,20 @@ composer install
 
 ##### Set up Database
 
-create a database on your local mysql client with the details below
+There are two ways - you could use migration
+
+```sh
+php artisan migrate
+```
+
+You can also run the database seeder to get some initial data setup
+
+```sh
+ php artisan db:seed
+```
+
+or use the database dump by
+creating a database on your local mysql client with the details below
 
 ```sh
 DB_HOST=127.0.0.1
