@@ -3,34 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactDetail\UpdateContactDetailRequest;
-use App\Models\ContactDetail;
-use Illuminate\Http\Request;
+use App\Services\CustomerService;
+use Illuminate\Http\JsonResponse;
 
 class ContactDetailController extends Controller
 {
-    public function show(Request $request)
-    {
-        $contact = $request->user()->contactDetail;
+   private CustomerService $customerService;
 
-        if (!$contact) {
-            return $this->notFound('Contact details not set');
-        }
+   public function __construct(CustomerService $customerService)
+   {
+      $this->customerService = $customerService;
+   }
 
-        return response()->json([
-            'success' => true,
-            'data' => $contact,
-        ]);
-    }
+   public function create(UpdateContactDetailRequest $request): JsonResponse
+   {
+      $this->customerService->updateContact(
+         $request->user(),
+         $request['customer_id'],
+         $request['contact_email'],
+         $request['contact_phone'],
+      );
 
-    public function update(UpdateContactDetailRequest $request)
-    {
-        $user = $request->user();
-
-        $contact = ContactDetail::updateOrCreate(
-            ['user_id' => $user->id],
-            $request->validated()
-        );
-
-        return $this->updated($contact, 'Contact details saved');
-    }
+      return $this->success();
+   }
 }

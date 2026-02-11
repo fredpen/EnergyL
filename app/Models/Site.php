@@ -2,33 +2,24 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Site extends Model
 {
-    protected $fillable = [
-        'owner_id',
-        'meter_id',
-        'type',
-        'latest_reading',
-        'last_updated_at',
-    ];
+   use HasFactory;
 
-    protected $casts = [
-        'last_updated_at' => 'datetime',
-    ];
+   protected $guarded = [];
 
-    public function owner(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'owner_id');
-    }
+   public function owner(): BelongsTo
+   {
+      return $this->belongsTo(Company::class, 'company_id');
+   }
 
-    public function meters(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Meter::class);
-    }
-
-
+   public function customer(): BelongsTo
+   {
+      return $this->belongsTo(Customer::class, 'customer_id');
+   }
 }
 

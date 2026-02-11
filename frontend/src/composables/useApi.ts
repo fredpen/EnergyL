@@ -1,4 +1,6 @@
-export const API_BASE_URL: string = 'http://127.0.0.1:8000/api/v1';
+import {API_BASE_URL} from "../constants/api.routes.ts";
+
+
 let controller = new AbortController();
 let signal = controller.signal;
 
@@ -51,9 +53,7 @@ const req = async (
             .then(response => response.json())
             .then(result => resolve(result))
             .catch(error => reject(error));
-
     })
-
 }
 
 const getAuthTokenFromLocalStorage = () => {

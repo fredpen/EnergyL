@@ -3,22 +3,24 @@
 
 namespace App\Http\Requests\ContactDetail;
 
+use App\Rules\UkPhoneNumber;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateContactDetailRequest extends FormRequest
 {
-    protected $stopOnFirstFailure;
+   protected $stopOnFirstFailure;
 
-    public function authorize(): bool
-    {
-        return true;
-    }
+   public function authorize(): bool
+   {
+      return true;
+   }
 
-    public function rules(): array
-    {
-        return [
-            'email' => ['required', 'email', 'max:255'],
-            'phone' => ['required', 'string', 'max:20'],
-        ];
-    }
+   public function rules(): array
+   {
+      return [
+         'contact_email' => ['required', 'string', 'email' => 'email:rfc,dns', 'max:255'],
+         'contact_phone' => ['required', new UkPhoneNumber],
+         'customer_id' => ['required', 'exists:customers,id'],
+      ];
+   }
 }

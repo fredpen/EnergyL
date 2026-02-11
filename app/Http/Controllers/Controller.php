@@ -41,6 +41,13 @@ abstract class Controller
         ], 404);
     }
 
+    protected function fail(string $message = 'Something went wrong'): JsonResponse
+    {
+        return response()->json([
+            'success' => false,
+            'message' => $message,
+        ], 400);
+    }
     protected function error(string $message = 'Something went wrong', int $status = 500, $errors = null): JsonResponse
     {
         return response()->json([

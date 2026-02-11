@@ -6,20 +6,19 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreSiteRequest extends FormRequest
 {
-    protected $stopOnFirstFailure;
+   protected $stopOnFirstFailure;
 
-    public function authorize(): bool
-    {
-        return true;
-    }
-    public function rules(): array
-    {
-        return [
-            'owner_id' => ['required', 'exists:users,id'],
-            'meter_id' => ['required', 'string', 'max:255'],
-            'type' => ['required', 'in:gas,electric'],
-            'latest_reading' => ['nullable', 'numeric'],
-            'last_updated_at' => ['nullable', 'date'],
-        ];
-    }
+   public function authorize(): bool
+   {
+      return true;
+   }
+
+   public function rules(): array
+   {
+      return [
+         'name' => ['required', 'string', 'max:255'],
+         'meter_id' => ['required', 'string', 'max:255'],
+         'customer_id' => ['required', 'exists:customers,id'],
+      ];
+   }
 }
