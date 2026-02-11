@@ -28,6 +28,12 @@ Create the env file from env example
  cp .env.example .env  
 ```
 
+Generate APP key
+
+```sh
+php artisan key:generate
+```
+
 Install PHP dependencies:
 
 ```sh
