@@ -46,7 +46,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-if you have any details different from above kindly update the .env details to reflect this
+if you have any details different from above kindly update the .env file to reflect this
 import the db.sql into your database using the file attached to the email
 
 Start Backend Server
@@ -64,15 +64,16 @@ npm run dev
 
 ##### Testing
 
-Kindly ensure testing is run from the root project folder
+Ensure testing is run from the root project folder
 if you are in the frontend folder kindly cd back to the root folder
-
 ```sh
  ./vendor/bin/pest     
 ```
 
 Api access at http://127.0.0.1:8000
+
 visit the site at http://localhost:5173/
+
 API Documentation https://documenter.getpostman.com/view/9861862/2sBXcAKiMf
 
 #### Technical Decisions
