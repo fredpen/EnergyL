@@ -20,18 +20,18 @@ Enter into the project directory
 cd EnergyL
 ```
 
+### Backend
+
+Create the env file from env example
+
+```sh
+ cp .env.example .env  
+```
+
 Install PHP dependencies:
 
 ```sh
 composer install
-```
-
-Install Node dependencies:
-```sh
-cd frontend
-```
-```sh
-npm install
 ```
 
 ##### Set up Database
@@ -55,19 +55,28 @@ Start Backend Server
 php artisan serve
 ```
 
-Start Frontend Server
-
-```sh
-cd frontend
-npm run dev
-```
-
 ##### Testing
 
 Ensure testing is run from the root project folder
 if you are in the frontend folder kindly cd back to the root folder
+
 ```sh
  ./vendor/bin/pest     
+```
+
+### Frontend
+
+Set up frontend
+
+```sh
+cd frontend
+npm install
+```
+
+Start Frontend Server
+
+```sh
+npm run dev
 ```
 
 Api access at http://127.0.0.1:8000
