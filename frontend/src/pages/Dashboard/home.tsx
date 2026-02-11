@@ -1,7 +1,7 @@
 import MonthlyReadingChart from "../../components/Site/MonthlyReadingChart.tsx";
 import StatisticsChart from "../../components/Site/StatisticsChart";
 import MonthlyTarget from "../../components/Site/MonthlyTarget";
-import RecentOrders from "../../components/Site/RecentOrders";
+// import RecentOrders from "../../components/Site/RecentOrders";
 import DemographicCard from "../../components/Site/DemographicCard";
 import SiteMetrics from "../../components/Site/SiteMetrics.tsx";
 
@@ -27,10 +27,6 @@ export default function Home() {
 
             <div className="col-span-12 xl:col-span-5">
                <DemographicCard/>
-            </div>
-
-            <div className="col-span-12 xl:col-span-7">
-               <RecentOrders/>
             </div>
          </div>
       </>
