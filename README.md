@@ -1,15 +1,38 @@
+### Energy Logix
+
 ## Installation
 
 ##### Dependencies
 
 PHP "^8.2" and composer is required to run this project on your machine.
 
-##### Download the code zip:
+##### Clone the repo locally:
 
-Extract the code into a preferred location on your machine and open a terminal in the directory EnergyLG
-The code has both the frontend and backend.
-Backend is in laravel
-Frontend is in ReactJs
+Open a terminal or a git client and clone the project using the code below
+
+```sh
+git clone https://github.com/fredpen/EnergyL EnergyL
+```
+
+Enter into the project directory
+
+```sh
+cd EnergyL
+```
+
+Install PHP dependencies:
+
+```sh
+composer install
+```
+
+Install Node dependencies:
+```sh
+cd frontend
+```
+```sh
+npm install
+```
 
 ##### Set up Database
 
@@ -39,9 +62,11 @@ cd frontend
 npm run dev
 ```
 
-##### Testing 
+##### Testing
+
 Kindly ensure testing is run from the root project folder
 if you are in the frontend folder kindly cd back to the root folder
+
 ```sh
  ./vendor/bin/pest     
 ```
