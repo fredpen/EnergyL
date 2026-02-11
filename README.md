@@ -78,9 +78,11 @@ API Documentation https://documenter.getpostman.com/view/9861862/2sBXcAKiMf
 
 #### Technical Decisions
 
-Due to time I focus a bit more on backend and most of the frontend is mocked data.
+I focused a bit more on backend and most of the frontend is set up with mocked data.
 I use a service pattern where most of the work is defer to the service rather than the controller.
 Schema is simple to favour read over writes.
-Access could be moved to Gates and Policies 
+Access control is implemented by middleware but could be moved to Gates and Policies
+
+
 
 
